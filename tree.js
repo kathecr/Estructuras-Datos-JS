@@ -2,7 +2,7 @@ class Node{
   constructor(value){
     this.left = null;
     this.right = null;
-    this.value = value
+    this.value = value;
   }
 }
 class BinaryTree{
@@ -10,27 +10,24 @@ class BinaryTree{
     this.root = null;
   }
   insert(value){
-    let newNode = new Node(value);
+    const newNode = new Node(value);
     if(this.root === null){
       this.root = newNode;
     } else{      
       let currentNode = this.root
       while(true){
         if(value < currentNode.value){
-          if(!currenteNode.left){ 
-            //Ejecuta si es null
-            currentNode.left = newNode 
+          if(!currentNode.left){   
+            currentNode.left = newNode //Ejecuta si es null
             return this            
-          }//Ejecuta si no es null
-            currentNode = currentNode.left
+          }
+            currentNode = currentNode.left //Ejecuta si no es null
         }else {
-          if(!currenteNode.right){ 
-            //Ejecuta si es null
-            currentNode.right = newNode 
+          if(!currentNode.right){             
+            currentNode.right = newNode //Ejecuta si es null
             return this            
-          }//Ejecuta si no es null
-            currentNode = currentNode.right
-          
+          }
+            currentNode = currentNode.right     //Ejecuta si no es null     
         }
       }
     }
@@ -43,7 +40,7 @@ class BinaryTree{
       }else if(value < currentNode.value){
         currentNode = currentNode.left
       }else if(value > currentNode.value){
-        currenteNode = currenteNode.right
+        currentNode = currentNode.right
       }else{
         return true
       }
